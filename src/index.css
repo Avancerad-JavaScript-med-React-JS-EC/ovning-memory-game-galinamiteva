@@ -1,0 +1,70 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: #1e1e1e;
+  color: #e7e7e7;
+  margin: 0 auto;
+  padding: 1em 2em;
+ 
+  font-family: 'FiraCode-retina';
+  padding-inline-start: 0px;
+}
+
+.app {
+  text-align: center;
+  background: #cfdee6;
+}
+
+
+
+
+ul {
+  margin: 5px;
+  padding: 0;
+  height: 100%;
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 5px;
+  font-size: 20px;
+  float: right;
+  list-style-type: none;
+  flex-basis: 20%;
+
+}
+
+.instruction {
+  /* margin-left: 20%; */
+  font-size: 20px;
+  flex-basis: 40%;
+  flex-shrink: 3;
+  list-style-type: none;
+  margin-left: 10px;
+}
+
+.restart:hover {
+  color: #cad9e0;
+}
+
+.navbar {
+  min-height: 60px;
+}
+
+button{
+  background-color: black;
+  border: none;
+  color: rgb(28, 167, 209);
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
