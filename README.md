@@ -1,4 +1,4 @@
-# Filen är skriven på den här videon med några komplettering : https://www.youtube.com/c/devmentorlive/videos
+# Mappen är skriven på den här videon med några komplettering : https://www.youtube.com/c/devmentorlive/videos
 
 
 # Getting Started with Create React App
