@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
 import Board from './components/Board';
 import Navbar from './components/Navbar';
@@ -16,9 +17,26 @@ export default function App() {
   const [losses, setLosses] = useState(0);
 
   useEffect(() => {
+  resizeBoard()
+  setCards(initializeDeck())
+}, [])
+
+useEffect(() => {
+  if (cards.length) {
+    preloadImages()
+  }
+}, [cards])
+
+useEffect(() => {
+  console.log("Брой карти:", cards.length);
+  console.table(cards);
+}, [cards]);
+
+  useEffect(() => {
     resizeBoard()
     setCards(initializeDeck())
     preloadImages()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   
@@ -29,6 +47,7 @@ export default function App() {
 
   useEffect(() => {
     checkScore();
+  
   }, [score]); // Only re-run the effect if count changes
 
   const handleClick = (id) => {
@@ -90,6 +109,7 @@ export default function App() {
 
   const preloadImages = () => {
     console.log(cards.length)
+    // eslint-disable-next-line array-callback-return
     cards.map(card => {
       const src = `/images/${card.type}.png`
       new Image().src = src

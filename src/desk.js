@@ -1,34 +1,22 @@
-
-function shuffle(array){
-    const _array=array.slice(0);
-
-    for (let i = 0; i < array.length - 1; i++) {
-        let randomIndex = Math.floor(Math.random() * (i + 1));
-        let temp = _array[i];
-        _array[i] = _array[randomIndex];
-        _array[randomIndex] = temp;
-    }
-    console.log(_array);
-    
-    return _array; 
+function shuffle(array) {
+  const _array = array.slice();
+  for (let i = _array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    [_array[i], _array[randomIndex]] = [_array[randomIndex], _array[i]];
+  }
+  return _array;
 }
 
+export default function initializeDeck() {
+  const types = [
+    'astronaut', 'clown', 'cook', 'diver',
+    'doctor', 'fairy', 'musician', 'police'
+  ];
 
-export default function initializeDesk(){
-    let id = 0;
-    const cards = ['astronaut', 'clown', 'cook','diver', 'doctor', 'fairy', 'musician', 'police'
-    ].reduce((acc, type) => {
-        acc.push({
-            id: id++,
-            type
-        })
-        acc.push({
-            id: id++,
-            type
-        })
-        return acc
-    }, [])
+  const cards = types.flatMap((type, index) => ([
+    { id: index * 2, type },
+    { id: index * 2 + 1, type }
+  ]));
 
-    return shuffle(cards)
-
+  return shuffle(cards);
 }
