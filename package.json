@@ -41,8 +41,12 @@
     "npm-force-resolutions": "^0.0.10"
   },
   "overrides": {
-    "postcss": "^8.4.0"
-  },
+  "postcss": "8.4.31",
+  "postcss-safe-parser": {
+    "postcss": "8.4.31"
+  }
+}
+,
   "engines": {
     "node": "18.x"
   }
